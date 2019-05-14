@@ -1,5 +1,10 @@
 # Studio 安裝
 
+啟動ssh
+--
+
+    $ sudo apt-get install -y ssh
+
 確認git, curl都安裝可使用
 
     $ sudo apt install -y git
