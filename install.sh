@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-user= neo@640228
-sudo apt install -y git
-sudo apt install -y curl
+user=neo640228
+sudo apt-get install -y ssh
+sudo apt install -y git curl
 
-git clone git@github.com:$user/studio.git
+#git clone git@github.com:$user/studio.git
+
+gut clobe https://github.com/neo640228/studio
 
 cd studio
 
@@ -20,6 +22,9 @@ source .bashrc
 source .profile
 
 pip install -U pipenv
+
+source .bashrc
+source .profile
 
 pipenv shell
 pipenv sync

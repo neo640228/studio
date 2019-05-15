@@ -1,5 +1,14 @@
 # Studio 安裝
 
+基本設定
+--
+設定sudo免密碼
+
+    $ su -
+    登入root
+    $ vi /etc/sudoers
+    加入一行  
+    ossf	ALL=NOPASSWD: ALL
 啟動ssh
 --
 
@@ -14,7 +23,18 @@ clone Studio
 將[studio repo](https://github.com/learningequality/studio) Fork一份到自己的git帳號中
 然後把它clone回來
 
+###最簡單的做法
+
+    $ git clone https://github.com/neo640228/studio
+
+* 缺點：慢
+* 優點：簡單易用，沒有很多設定
+### 正規做法
+
     $ git clone git@github.com:neo640228/studio.git
+
+* 缺點：設定麻煩
+* 優點：快
 
 studio會是我們的專案目錄
 
@@ -59,13 +79,13 @@ Install softwar prerequisites
 
     # Install minio
     $ sudo wget https://dl.minio.io/server/minio/release/linux-amd64/minio -O /usr/local/bin/minio
-    $ chmod +x /usr/local/bin/minio
+    $ sudo chmod +x /usr/local/bin/minio
 
     # Install node PPA
     $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 
     # Install packages
-    $ apt-get install -y  python python-pip python-dev python-tk \
+    $ sudo apt-get install -y  python python-pip python-dev python-tk \
         postgresql-server-dev-all postgresql-contrib postgresql-client postgresql \
         ffmpeg nodejs libmagickwand-dev nginx redis-server wkhtmltopdf
 #設定python依賴環境
